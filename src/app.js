@@ -19,7 +19,7 @@ const Post = require("./routes/postController")
     app.use(cors())
 
 mongoose.connect(
-    process.env.MONGO_URL,
+    process.env.MONGO_URL || 'mongodb://localhost/consumeApi' ,
     {
     useNewUrlParser: true,
     useUnifiedTopology: true

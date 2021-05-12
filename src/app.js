@@ -12,6 +12,7 @@ const Post = require("./routes/postController")
 
 //Configs
     app.use(express.json())
+    app.use(express.urlencoded({ extended: true }))
 
     app.use(bodyParser.json())
     app.use(bodyParser.urlencoded({ extended: false }))
@@ -19,7 +20,7 @@ const Post = require("./routes/postController")
     app.use(cors())
 
 mongoose.connect(
-    process.env.MONGO_URL || 'mongodb://localhost/consumeApi' ,
+    process.env.MONGO_URL,
     {
     useNewUrlParser: true,
     useUnifiedTopology: true

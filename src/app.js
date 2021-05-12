@@ -23,4 +23,4 @@ mongoose.connect("mongodb://localhost/consumeApi", {
 
 app.use("/post", Post)
 
-app.listen(6767, () => console.log("Server running..."))
+app.listen(process.env.PORT || 6767, () => console.log("Server running..."))

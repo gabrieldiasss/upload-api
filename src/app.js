@@ -1,3 +1,5 @@
+require("dotenv").config()
+
 const express = require("express")
 const app = express()
 
@@ -16,7 +18,9 @@ const Post = require("./routes/postController")
 
     app.use(cors())
 
-mongoose.connect("mongodb://localhost/consumeApi", {
+mongoose.connect(
+    process.env.MONGO_URL,
+    {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

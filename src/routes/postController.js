@@ -12,7 +12,7 @@ router.get("/", async(req, res) => {
 
         const list = await Post.find()
 
-        res.json({list})
+        res.json(list)
 
     } catch {
         return res.status(400).json("Error")

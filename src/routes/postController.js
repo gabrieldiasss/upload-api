@@ -26,7 +26,7 @@ router.get("/:postId", async(req, res) => {
 
         const listOne = await Post.findOne({_id: req.params.postId})
 
-        res.json({listOne})
+        res.json(listOne)
 
     } catch {
 

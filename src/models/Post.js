@@ -12,6 +12,11 @@ const newPost = new mongoose.Schema({
         require: true
     },
 
+    content: {
+        type: String,
+        require: true
+    },
+
     date: {
         type: Date,
         default: Date.now()

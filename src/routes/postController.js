@@ -39,9 +39,9 @@ router.post("/create", async(req, res) => {
 
     try {
 
-        const {title, description} = req.body
+        const {title, description, content} = req.body
 
-        const createPost = await Post.create({ title, description })
+        const createPost = await Post.create({ title, description, content })
 
         res.json({ createPost })
 
@@ -57,11 +57,12 @@ router.put("/edit/:postId", async(req, res) => {
 
     try {
 
-        const {title, description} = req.body
+        const {title, description, content} = req.body
 
         const edit = await Post.findByIdAndUpdate({ _id: req.params.postId}, {
             title,
-            description
+            description,
+            content
         }, {new: true})
 
         res.json({edit})
